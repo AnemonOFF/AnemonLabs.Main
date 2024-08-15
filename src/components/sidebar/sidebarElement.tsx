@@ -12,6 +12,7 @@ export interface SidebarElementProps {
   url: string;
   highlightClassName?: string;
   isPresent?: boolean;
+  onClick: () => void;
 }
 
 const SidebarElement: React.FC<SidebarElementProps> = ({
@@ -20,6 +21,7 @@ const SidebarElement: React.FC<SidebarElementProps> = ({
   url,
   highlightClassName,
   isPresent,
+  onClick,
 }) => {
   const pathname = usePathname();
   const isActive = pathname == url;
@@ -29,7 +31,11 @@ const SidebarElement: React.FC<SidebarElementProps> = ({
     : "text-foreground-400";
 
   return (
-    <Link className={cn("rounded-xl pl-1 w-full", className)} href={url}>
+    <Link
+      className={cn("rounded-xl pl-1 w-full", className)}
+      href={url}
+      onClick={onClick}
+    >
       <div className="rounded-lg p-2 bg-background hover:bg-foreground-100 transition-colors flex gap-5 items-center justify-between w-full">
         <span className="text-lg text-foreground">{name}</span>
         <span className={presentClassName}>{year}</span>

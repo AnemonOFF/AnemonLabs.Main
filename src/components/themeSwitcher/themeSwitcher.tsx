@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@nextui-org/button";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 
@@ -24,8 +24,8 @@ const ThemeSwitcher: React.FC = () => {
       isIconOnly
       variant="light"
     >
-      {currentTheme === "light" && <SunIcon />}
-      {currentTheme === "dark" && <MoonIcon />}
+      {currentTheme === "light" && <IconSun />}
+      {currentTheme === "dark" && <IconMoon />}
     </Button>
   );
 };
