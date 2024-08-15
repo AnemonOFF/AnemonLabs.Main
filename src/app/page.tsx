@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="w-full min-h-full flex flex-col justify-between gap-5">
       <div />
-      <main className="mt-5">
+      <main className="m-5">
         <div className="flex gap-5 justify-evenly">
           <div className="">
             <div className="flex gap-2 items-end">

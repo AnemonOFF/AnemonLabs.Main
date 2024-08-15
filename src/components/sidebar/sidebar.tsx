@@ -5,40 +5,12 @@ import ThemeSwitcher from "../themeSwitcher";
 import Link from "next/link";
 import { IconAddressBook } from "@tabler/icons-react";
 import { cn } from "@nextui-org/react";
+import projects from "@/static/projects";
 
 export interface SidebarProps {
   onLinkClick: () => void;
   className?: string;
 }
-
-const projects: Omit<SidebarElementProps, "onClick">[] = [
-  {
-    name: "Gate",
-    url: "/project/gate",
-    year: "2024",
-    highlightClassName: "from-green-400 to-cyan-400",
-  },
-  {
-    name: "Obana Club",
-    url: "/project/obana",
-    year: "2023 - 2024",
-  },
-  {
-    name: "People",
-    url: "/project/people",
-    year: "2023-2024",
-  },
-  {
-    name: "Paper",
-    url: "/project/paper",
-    year: "2023",
-  },
-  {
-    name: "FontNET",
-    url: "/project/fontnet",
-    year: "2022-2023",
-  },
-];
 
 const Sidebar: React.FC<SidebarProps> = ({ onLinkClick, className }) => {
   return (

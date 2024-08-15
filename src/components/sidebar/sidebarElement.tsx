@@ -9,7 +9,7 @@ import React from "react";
 export interface SidebarElementProps {
   name: string;
   year: string;
-  url: string;
+  pageName: string;
   highlightClassName?: string;
   isPresent?: boolean;
   onClick: () => void;
@@ -18,12 +18,13 @@ export interface SidebarElementProps {
 const SidebarElement: React.FC<SidebarElementProps> = ({
   name,
   year,
-  url,
+  pageName,
   highlightClassName,
   isPresent,
   onClick,
 }) => {
   const pathname = usePathname();
+  const url = `/project/${pageName}`;
   const isActive = pathname == url;
   const className = `bg-gradient-to-b ${highlightClassName}`;
   const presentClassName = isPresent
@@ -36,9 +37,16 @@ const SidebarElement: React.FC<SidebarElementProps> = ({
       href={url}
       onClick={onClick}
     >
-      <div className="rounded-lg p-2 bg-background hover:bg-foreground-100 transition-colors flex gap-5 items-center justify-between w-full">
-        <span className="text-lg text-foreground">{name}</span>
-        <span className={presentClassName}>{year}</span>
+      <div className="rounded-lg bg-background w-full">
+        <div
+          className={cn(
+            "p-2 rounded-lg hover:bg-foreground-100 transition-colors flex gap-5 items-center justify-between w-full",
+            { "bg-blue-400/25": isActive }
+          )}
+        >
+          <span className="text-lg text-foreground">{name}</span>
+          <span className={presentClassName}>{year}</span>
+        </div>
       </div>
     </Link>
   );
