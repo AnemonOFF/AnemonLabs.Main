@@ -5,9 +5,11 @@ import Sidebar from "../sidebar";
 import { cn } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
 import { IconMenu2 } from "@tabler/icons-react";
+import { usePathname } from "next/navigation";
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
-  const [isOpened, setOpened] = useState(true);
+  const pathName = usePathname();
+  const [isOpened, setOpened] = useState(() => pathName === "/");
 
   return (
     <div className="min-h-screen bg-background grid grid-rows-1 grid-cols-[auto_1fr] max-lg:grid-cols-1">
