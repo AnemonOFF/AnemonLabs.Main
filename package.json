@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.5",
     "@nextui-org/react": "^2.4.6",
     "@tabler/icons-react": "^3.12.0",
     "framer-motion": "^11.3.27",
+    "negotiator": "^1.0.0",
     "next": "14.2.3",
     "next-themes": "^0.3.0",
     "randomcolor": "^0.6.2",
@@ -20,6 +22,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/randomcolor": "^0.5.9",
     "@types/react": "^18",

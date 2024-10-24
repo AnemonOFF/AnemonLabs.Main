@@ -1,0 +1,13 @@
+{
+  "layout": {
+    "sidebar": {
+      "contacts": "Contacts"
+    }
+  },
+  "page": {
+    "index": {
+      "name": "aka Dmitriy"
+    }
+  },
+  "project": {}
+}

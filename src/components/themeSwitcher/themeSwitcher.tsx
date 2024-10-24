@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@nextui-org/button";
-import { IconMoon, IconSun } from "@tabler/icons-react";
+import { IconLoader, IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 
@@ -14,8 +14,6 @@ const ThemeSwitcher: React.FC = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
-
   return (
     <Button
       onClick={() =>
@@ -23,9 +21,15 @@ const ThemeSwitcher: React.FC = () => {
       }
       isIconOnly
       variant="light"
+      disabled={!mounted}
     >
-      {currentTheme === "light" && <IconSun />}
-      {currentTheme === "dark" && <IconMoon />}
+      {!mounted ? (
+        <IconLoader className="animate-spin" />
+      ) : currentTheme === "light" ? (
+        <IconSun />
+      ) : (
+        <IconMoon />
+      )}
     </Button>
   );
 };
