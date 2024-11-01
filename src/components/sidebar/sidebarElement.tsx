@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardBody, CardFooter } from "@nextui-org/card";
+import { Locale } from "@/i18n/i18n-config";
 import { cn } from "@nextui-org/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,6 +13,7 @@ export interface SidebarElementProps {
   highlightClassName?: string;
   isPresent?: boolean;
   onClick: () => void;
+  locale: Locale;
 }
 
 const SidebarElement: React.FC<SidebarElementProps> = ({
@@ -22,9 +23,10 @@ const SidebarElement: React.FC<SidebarElementProps> = ({
   highlightClassName,
   isPresent,
   onClick,
+  locale,
 }) => {
   const pathname = usePathname();
-  const url = `/project/${pageName}`;
+  const url = `/${locale}/project/${pageName}`;
   const isActive = pathname == url;
   const className = `bg-gradient-to-b ${highlightClassName}`;
   const presentClassName = isPresent

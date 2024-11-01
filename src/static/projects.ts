@@ -2,6 +2,62 @@ import { Project } from "@/types/project";
 
 const projects: Project[] = [
   {
+    name: "DotStat",
+    description: "",
+    stack: [
+      {
+        category: "Front-End",
+        icon: "/icons/nextjs.webp",
+        name: "NextJS",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/react.webp",
+        name: "React",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/typescript.png",
+        name: "TypeScript",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/zustand.png",
+        name: "Zustand",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/shadcn.png",
+        name: "shadcn/ui",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/reactquery.png",
+        name: "React Query",
+      },
+      {
+        category: "Back-End",
+        icon: "/icons/dotnetcore.png",
+        name: ".NET Core",
+      },
+      {
+        category: "Back-End",
+        icon: "/icons/efcore.png",
+        name: "Entity Framework Core",
+      },
+      {
+        category: "Архитектура",
+        icon: "/icons/docker.webp",
+        name: "Docker",
+      },
+    ],
+    images: [],
+    pageName: "dotstat",
+    year: "2024",
+    highlightClassName: "from-green-400 to-cyan-400",
+    isPresent: true,
+  },
+  {
     name: "Gate",
     description:
       "Специализированный браузер, скрывающий свою работу, с защитой от записи на видео и скриншотов",
@@ -56,8 +112,6 @@ const projects: Project[] = [
     pageName: "gate",
     year: "2024",
     url: "https://gate.anemonlabs.ru",
-    highlightClassName: "from-green-400 to-cyan-400",
-    isPresent: true,
   },
   {
     name: "Obana Club",

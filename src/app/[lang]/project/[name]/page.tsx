@@ -36,7 +36,7 @@ export default async function ProjectPage({
 
   return (
     <div className="max-w-[1600px] w-full mx-auto">
-      <div className="flex max-xl:flex-col gap-10 m-5 mt-20 items-stretch max-xl:items-center">
+      <div className="grid grid-cols-2 max-xl:grid-cols-1 gap-10 m-5 mt-20">
         <div>
           <h1 className="text-4xl font-bold">
             {project.url && (
@@ -74,11 +74,11 @@ export default async function ProjectPage({
               </div>
             ))}
           </div>
-          <div className="mt-5">
+          <div className="mt-5 prose prose-headings:mt-5 prose-headings:font-semibold prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg">
             <MDXRemote source={markdown} />
           </div>
         </div>
-        <div className="max-w-[600px] w-full">
+        <div className="block max-w-[600px] w-full mx-auto">
           <Carousel
             imageUrls={project.images}
             className="max-h-[700px] w-full aspect-[6/7]"

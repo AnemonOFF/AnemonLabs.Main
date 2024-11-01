@@ -8,17 +8,20 @@ import { cn } from "@nextui-org/react";
 import projects from "@/static/projects";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { LocaleSwitcher } from "../localeSwitcher";
+import { Locale } from "@/i18n/i18n-config";
 
 export interface SidebarProps {
   onLinkClick: () => void;
   className?: string;
   dictionary: Awaited<ReturnType<typeof getDictionary>>["layout"]["sidebar"];
+  locale: Locale;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
   onLinkClick,
   className,
   dictionary,
+  locale,
 }) => {
   return (
     <aside
@@ -39,6 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           {projects.map((project) => (
             <SidebarElement
               key={project.name}
+              locale={locale}
               onClick={onLinkClick}
               {...project}
             />

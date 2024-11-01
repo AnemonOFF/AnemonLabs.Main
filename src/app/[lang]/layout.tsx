@@ -32,7 +32,9 @@ export default async function RootLayout({
         className={`text-foreground bg-background antialiased ${inter.className}`}
       >
         <Providers>
-          <Layout dictionary={dictionary["layout"]}>{children}</Layout>
+          <Layout dictionary={dictionary["layout"]} locale={params.lang}>
+            {children}
+          </Layout>
         </Providers>
       </body>
     </html>

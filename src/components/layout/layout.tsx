@@ -7,13 +7,15 @@ import { Button } from "@nextui-org/button";
 import { IconMenu2 } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
 import { getDictionary } from "@/i18n/get-dictionary";
+import { Locale } from "@/i18n/i18n-config";
 
 export interface LayoutProps {
   children: React.ReactNode;
   dictionary: Awaited<ReturnType<typeof getDictionary>>["layout"];
+  locale: Locale;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, dictionary }) => {
+const Layout: React.FC<LayoutProps> = ({ children, dictionary, locale }) => {
   const pathName = usePathname();
   const [isOpened, setOpened] = useState(() => pathName === "/");
 
@@ -37,6 +39,7 @@ const Layout: React.FC<LayoutProps> = ({ children, dictionary }) => {
         className={cn("transition-all", { "max-lg:hidden": !isOpened })}
         onLinkClick={() => setOpened(false)}
         dictionary={dictionary.sidebar}
+        locale={locale}
       />
       <div className={cn({ "max-lg:hidden": isOpened })}>{children}</div>
     </div>
