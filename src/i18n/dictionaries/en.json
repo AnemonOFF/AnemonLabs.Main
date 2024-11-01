@@ -7,7 +7,9 @@
   "page": {
     "index": {
       "name": "aka Dmitriy"
+    },
+    "project": {
+      "stack": "Technology Stack"
     }
-  },
-  "project": {}
+  }
 }

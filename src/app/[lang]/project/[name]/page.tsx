@@ -1,4 +1,6 @@
 import Carousel from "@/components/carousel";
+import { getDictionary } from "@/i18n/get-dictionary";
+import { Locale } from "@/i18n/i18n-config";
 import projects from "@/static/projects";
 import { GroupBy } from "@/utils/array";
 import { Button } from "@nextui-org/button";
@@ -6,6 +8,8 @@ import { IconExternalLink } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { promises as fs } from "node:fs";
 
 export async function generateStaticParams() {
   const pageNames = projects.map((p) => ({ name: p.pageName }));
@@ -13,10 +17,20 @@ export async function generateStaticParams() {
   return pageNames;
 }
 
-export default function ProjectPage({ params }: { params: { name: string } }) {
+export default async function ProjectPage({
+  params,
+}: {
+  params: { name: string; lang: Locale };
+}) {
   const name = params.name;
+  const dictionary = (await getDictionary(params.lang)).page.project;
   const project = projects.find((p) => p.pageName === name);
   if (project === undefined) notFound();
+
+  const mdBuffer = await fs.readFile(
+    `${process.cwd()}/src/static/projects/${params.lang}/${params.name}.mdx`
+  );
+  const markdown = mdBuffer.toString();
 
   const stack = GroupBy(project.stack, "category");
 
@@ -39,8 +53,7 @@ export default function ProjectPage({ params }: { params: { name: string } }) {
             )}
             {project.name}
           </h1>
-          <p className="mt-5">{project.description}</p>
-          <h2 className="text-2xl font-semibold mt-5">Стек технологий</h2>
+          <h2 className="text-2xl font-semibold mt-5">{dictionary.stack}</h2>
           <div className="flex flex-wrap gap-5 justify-between">
             {Object.keys(stack).map((category) => (
               <div className="flex flex-col gap-2" key={category}>
@@ -60,6 +73,9 @@ export default function ProjectPage({ params }: { params: { name: string } }) {
                 ))}
               </div>
             ))}
+          </div>
+          <div className="mt-5">
+            <MDXRemote source={markdown} />
           </div>
         </div>
         <div className="max-w-[600px] w-full">
