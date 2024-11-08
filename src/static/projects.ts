@@ -59,7 +59,7 @@ const projects: Project[] = [
     ],
     pageName: "dotstat",
     year: "2024",
-    highlightClassName: "from-green-400 to-cyan-400",
+    // highlightClassName: "from-green-400 to-cyan-400",
     isPresent: true,
   },
   {

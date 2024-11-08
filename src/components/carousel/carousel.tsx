@@ -5,6 +5,12 @@ import { Button } from "@nextui-org/button";
 import Image from "next/image";
 import React, { useState } from "react";
 import { IconCaretLeft, IconCaretRight } from "@tabler/icons-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 export interface CarouselProps {
   imageUrls: string[];
@@ -13,6 +19,29 @@ export interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ imageUrls, className }) => {
   const [currentIndex, setIndex] = useState(0);
+
+  return (
+    <Swiper
+      pagination={{
+        dynamicBullets: true,
+        clickable: true,
+      }}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      centeredSlides={true}
+      navigation={true}
+      modules={[Autoplay, Pagination, Navigation]}
+      className="border rounded"
+    >
+      {imageUrls.map((url, index) => (
+        <SwiperSlide key={index}>
+          <Image src={url} alt="Изображение" width={800} height={800} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
 
   return (
     <div

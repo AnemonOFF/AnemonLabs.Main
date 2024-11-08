@@ -79,10 +79,7 @@ export default async function ProjectPage({
           </div>
         </div>
         <div className="block max-w-[600px] w-full mx-auto">
-          <Carousel
-            imageUrls={project.images}
-            className="max-h-[700px] w-full aspect-[6/7]"
-          />
+          <Carousel imageUrls={project.images} />
         </div>
       </div>
     </div>
