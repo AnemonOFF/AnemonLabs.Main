@@ -1,6 +1,8 @@
 import { getDictionary } from "@/i18n/get-dictionary";
 import { Locale } from "@/i18n/i18n-config";
-import { IconBrandTelegram } from "@tabler/icons-react";
+import { Button } from "@nextui-org/button";
+import { Divider } from "@nextui-org/divider";
+import { IconBrandGithub, IconBrandTelegram } from "@tabler/icons-react";
 import Link from "next/link";
 
 export default async function Home({
@@ -12,9 +14,8 @@ export default async function Home({
 
   return (
     <div className="w-full min-h-full flex flex-col justify-center gap-5">
-      <div />
       <main className="m-5">
-        <div className="flex gap-5 justify-evenly">
+        <div className="flex flex-col gap-5 items-center">
           <div className="">
             <div className="flex gap-2 items-end">
               <h2 className="text-3xl text-foreground font-bold">Anemon</h2>
@@ -35,6 +36,14 @@ export default async function Home({
                 Telegram
               </Link>
             </div>
+          </div>
+          <Divider className="max-w-96" />
+          <div className="">
+            <Link href={"https://github.com/anemonoff"} target="_blank">
+              <Button variant="flat">
+                <IconBrandGithub /> GitHub
+              </Button>
+            </Link>
           </div>
         </div>
       </main>
