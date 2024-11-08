@@ -51,7 +51,12 @@ const projects: Project[] = [
         name: "Docker",
       },
     ],
-    images: [],
+    images: [
+      "/projects/dotstat/1.png",
+      "/projects/dotstat/2.png",
+      "/projects/dotstat/3.png",
+      "/projects/dotstat/4.png",
+    ],
     pageName: "dotstat",
     year: "2024",
     highlightClassName: "from-green-400 to-cyan-400",
