@@ -4,7 +4,7 @@ import { Locale } from "@/i18n/i18n-config";
 import projects from "@/static/projects";
 import { GroupBy } from "@/utils/array";
 import { Button } from "@nextui-org/button";
-import { IconExternalLink } from "@tabler/icons-react";
+import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -49,6 +49,18 @@ export default async function ProjectPage({
                 isIconOnly
               >
                 <IconExternalLink />
+              </Button>
+            )}
+            {project.gitHubUrl && (
+              <Button
+                as={Link}
+                href={project.gitHubUrl}
+                variant="light"
+                target="_blank"
+                className="mr-1"
+                isIconOnly
+              >
+                <IconBrandGithub />
               </Button>
             )}
             {project.name}

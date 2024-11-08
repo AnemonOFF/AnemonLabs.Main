@@ -61,6 +61,7 @@ const projects: Project[] = [
     year: "2024",
     // highlightClassName: "from-green-400 to-cyan-400",
     isPresent: true,
+    gitHubUrl: "https://github.com/al-dotstat",
   },
   {
     name: "Gate",
@@ -288,7 +289,7 @@ const projects: Project[] = [
     images: ["/projects/paper/1.png"],
     pageName: "paper",
     year: "2023",
-    url: "https://github.com/AnemonOFF/paper",
+    gitHubUrl: "https://github.com/AnemonOFF/paper",
   },
   {
     name: "FontNet",

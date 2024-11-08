@@ -6,6 +6,7 @@ export type Project = {
   pageName: string;
   year: string;
   url?: string;
+  gitHubUrl?: string;
   highlightClassName?: string;
   isPresent?: boolean;
 };
