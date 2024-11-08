@@ -4,6 +4,10 @@ import Negotiator from "negotiator";
 import { i18n } from "@/i18n/i18n-config";
 
 function getLocale(request: NextRequest) {
+  // Check cookies locale
+  const cookie = request.cookies.get("al-locale");
+  if (cookie) return cookie.value;
+
   // Negotiator expects plain object so we need to transform headers
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
