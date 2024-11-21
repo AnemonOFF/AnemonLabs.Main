@@ -64,6 +64,48 @@ const projects: Project[] = [
     gitHubUrl: "https://github.com/al-dotstat",
   },
   {
+    name: "ФСП",
+    description: "",
+    stack: [
+      {
+        category: "Front-End",
+        icon: "/icons/nextjs.webp",
+        name: "NextJS",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/react.webp",
+        name: "React",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/typescript.png",
+        name: "TypeScript",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/shadcn.png",
+        name: "shadcn/ui",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/reactquery.png",
+        name: "React Query",
+      },
+      {
+        category: "Архитектура",
+        icon: "/icons/docker.webp",
+        name: "Docker",
+      },
+    ],
+    images: ["/projects/fsp/1.png"],
+    pageName: "fsp",
+    year: "2024",
+    isPresent: true,
+    gitHubUrl:
+      "https://github.com/8kelena8/Sports-Programming-Sverdlovsk-Portal/tree/feature/no-ref/front/home-page",
+  },
+  {
     name: "Gate",
     description:
       "Специализированный браузер, скрывающий свою работу, с защитой от записи на видео и скриншотов",

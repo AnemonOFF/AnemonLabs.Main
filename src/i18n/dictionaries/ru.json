@@ -1,7 +1,8 @@
 {
   "layout": {
     "sidebar": {
-      "contacts": "Контакты"
+      "contacts": "Контакты",
+      "cv": "Резюме"
     }
   },
   "page": {

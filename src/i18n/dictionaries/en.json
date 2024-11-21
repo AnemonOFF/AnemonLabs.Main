@@ -1,7 +1,8 @@
 {
   "layout": {
     "sidebar": {
-      "contacts": "Contacts"
+      "contacts": "Contacts",
+      "cv": "Get CV"
     }
   },
   "page": {
