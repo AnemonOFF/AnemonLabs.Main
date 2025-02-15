@@ -1,17 +1,12 @@
 "use client";
 
 import React from "react";
-import Skill, { SkillProps } from "./skill";
-import { getDictionary } from "@/i18n/get-dictionary";
+import Skill, { PredefinedSkillProps } from "./skill";
 import { getIconSrc } from "@/utils/src";
 import { useTheme } from "next-themes";
 import { Skeleton } from "@heroui/skeleton";
 
-export interface SkillReactQueryProps extends Pick<SkillProps, "iconOnly"> {
-  skills: Awaited<ReturnType<typeof getDictionary>>["skills"];
-}
-
-const SkillReactQuery: React.FC<SkillReactQueryProps> = ({
+const SkillReactQuery: React.FC<PredefinedSkillProps> = ({
   iconOnly,
   skills,
 }) => {

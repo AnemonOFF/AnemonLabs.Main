@@ -6,21 +6,21 @@ import { getIconSrc } from "@/utils/src";
 import { useTheme } from "next-themes";
 import { Skeleton } from "@heroui/skeleton";
 
-const SkillZustand: React.FC<PredefinedSkillProps> = ({ iconOnly, skills }) => {
+const SkillEFCore: React.FC<PredefinedSkillProps> = ({ iconOnly, skills }) => {
   const { theme } = useTheme();
-  const description = skills.zustand.description;
+  const description = skills.efcore.description;
 
   if (theme === undefined) return <Skeleton className="rounded-full size-8" />;
 
   return (
     <Skill
-      name="Zustand"
+      name="Entity Framework"
       description={description}
-      iconSrc={getIconSrc("zustand.svg", theme as "light" | "dark")}
-      link="https://zustand.docs.pmnd.rs/"
+      iconSrc={getIconSrc("efcore.png", theme as "light" | "dark")}
+      link="https://react.dev/"
       iconOnly={iconOnly}
     />
   );
 };
 
-export default React.memo(SkillZustand);
+export default React.memo(SkillEFCore);

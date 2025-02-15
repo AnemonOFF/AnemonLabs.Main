@@ -36,6 +36,42 @@
     },
     "reactquery": {
       "description": "Hooks for request management, usually used in tandem with Axios for API communication"
+    },
+    "automapper": {
+      "description": "A library for automatic type (and class) conversion, providing convenient configuration functionality."
+    },
+    "awss3": {
+      "description": "S3 is a cloud-based object storage that allows you to take advantage of the files in it and scale its size at any time."
+    },
+    "chromium": {
+      "description": "A browser engine that allows you to display web pages"
+    },
+    "docker": {
+      "description": "A tool for containerising applications, allowing you to deploy and manage them with a single click."
+    },
+    "dotnet": {
+      "description": "A modern development environment based on C#. I use it to write both API servers and desktop applications."
+    },
+    "efcore": {
+      "description": "Powerful ORM for working with SQL databases in .NET"
+    },
+    "grpc": {
+      "description": "A protocol for synchronous messaging between applications, based on HTTP."
+    },
+    "heroui": {
+      "description": "(previously called NextUI) UI library for building adaptive applications, built on React and TailwindCSS. Fully optimised for NextJS (and other SSR frameworks)."
+    },
+    "mantine": {
+      "description": "A library for creating UI components built on TypeScript and React."
+    },
+    "prisma": {
+      "description": "ORM for working with SQL databases in NodeJS, based on GraphQL. I use it when creating simple API paths in NextJS."
+    },
+    "rabbitmq": {
+      "description": "A message broker that allows exchanging messages between applications. Mandatory (or its analogue) when building back-end with microservice architecture."
+    },
+    "wpf": {
+      "description": "A framework for building desktop applications based on .NET"
     }
   }
 }

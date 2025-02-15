@@ -3,6 +3,7 @@
 import React from "react";
 import { Tooltip } from "@heroui/tooltip";
 import Image from "next/image";
+import { getDictionary } from "@/i18n/get-dictionary";
 
 export interface SkillProps {
   name: string;
@@ -10,6 +11,10 @@ export interface SkillProps {
   description: string;
   link?: string;
   iconOnly?: boolean;
+}
+
+export interface PredefinedSkillProps extends Pick<SkillProps, "iconOnly"> {
+  skills: Awaited<ReturnType<typeof getDictionary>>["skills"];
 }
 
 const Skill: React.FC<SkillProps> = ({
@@ -21,7 +26,6 @@ const Skill: React.FC<SkillProps> = ({
 }) => {
   return (
     <Tooltip
-      closeDelay={500}
       content={
         <div className="space-y-2 p-2 max-w-64">
           <p className="flex items-center gap-2 text-lg font-semibold">

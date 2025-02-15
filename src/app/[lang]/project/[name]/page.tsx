@@ -22,7 +22,8 @@ export default async function ProjectPage(props: {
 }) {
   const params = await props.params;
   const name = params.name;
-  const dictionary = (await getDictionary(params.lang)).page.project;
+  const dictionary = await getDictionary(params.lang);
+  const pageDictionary = dictionary.page.project;
   const project = projects.find((p) => p.pageName === name);
   if (project === undefined) notFound();
 
@@ -66,23 +67,20 @@ export default async function ProjectPage(props: {
               {project.name}
             </span>
           </h1>
-          <h2 className="text-2xl font-semibold mt-5">{dictionary.stack}</h2>
+          <h2 className="text-2xl font-semibold mt-5">
+            {pageDictionary.stack}
+          </h2>
           <div className="flex flex-wrap gap-5 justify-between">
             {Object.keys(stack).map((category) => (
               <div className="flex flex-col gap-2" key={category}>
                 <h3 className="text-lg text-foreground-400 font-medium mt-5">
                   {category}
                 </h3>
-                {stack[category].map((tech) => (
-                  <div className="flex items-center gap-2" key={tech.name}>
-                    <Image
-                      width={32}
-                      height={32}
-                      src={tech.icon}
-                      alt={tech.name}
-                    />
-                    <span>{tech.name}</span>
-                  </div>
+                {stack[category].map((tech, i) => (
+                  <tech.component
+                    skills={dictionary.skills}
+                    key={`${category}_${i}`}
+                  />
                 ))}
               </div>
             ))}

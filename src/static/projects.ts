@@ -1,3 +1,23 @@
+import {
+  SkillAutoMapper,
+  SkillAWSS3,
+  SkillChromium,
+  SkillDocker,
+  SkillDotNet,
+  SkillEFCore,
+  SkillGRPC,
+  SkillHeroUI,
+  SkillMantine,
+  SkillNextJS,
+  SkillPrisma,
+  SkillRabbitMQ,
+  SkillReact,
+  SkillReactQuery,
+  SkillShadcn,
+  SkillTypeScript,
+  SkillWPF,
+  SkillZustand,
+} from "@/components/skill";
 import { Project } from "@/types/project";
 
 const projects: Project[] = [
@@ -7,48 +27,39 @@ const projects: Project[] = [
     stack: [
       {
         category: "Front-End",
-        icon: "/icons/nextjs.webp",
-        name: "NextJS",
+        component: SkillNextJS,
       },
       {
         category: "Front-End",
-        icon: "/icons/react.webp",
-        name: "React",
+        component: SkillReact,
       },
       {
         category: "Front-End",
-        icon: "/icons/typescript.png",
-        name: "TypeScript",
+        component: SkillTypeScript,
       },
       {
         category: "Front-End",
-        icon: "/icons/zustand.png",
-        name: "Zustand",
+        component: SkillZustand,
       },
       {
         category: "Front-End",
-        icon: "/icons/shadcn.png",
-        name: "shadcn/ui",
+        component: SkillShadcn,
       },
       {
         category: "Front-End",
-        icon: "/icons/reactquery.png",
-        name: "React Query",
+        component: SkillReactQuery,
       },
       {
         category: "Back-End",
-        icon: "/icons/dotnetcore.png",
-        name: ".NET Core",
+        component: SkillDotNet,
       },
       {
         category: "Back-End",
-        icon: "/icons/efcore.png",
-        name: "Entity Framework Core",
+        component: SkillEFCore,
       },
       {
         category: "Архитектура",
-        icon: "/icons/docker.webp",
-        name: "Docker",
+        component: SkillDocker,
       },
     ],
     images: [
@@ -69,48 +80,39 @@ const projects: Project[] = [
     stack: [
       {
         category: "Front-End",
-        icon: "/icons/nextjs.webp",
-        name: "NextJS",
+        component: SkillNextJS,
       },
       {
         category: "Front-End",
-        icon: "/icons/react.webp",
-        name: "React",
+        component: SkillReact,
       },
       {
         category: "Front-End",
-        icon: "/icons/reactquery.png",
-        name: "React Query",
+        component: SkillReactQuery,
       },
       {
         category: "Back-End",
-        icon: "/icons/dotnetcore.png",
-        name: ".NET Core",
+        component: SkillDotNet,
       },
       {
         category: "Back-End",
-        icon: "/icons/efcore.png",
-        name: "Entity Framework Core",
+        component: SkillEFCore,
       },
       {
         category: "Back-End",
-        icon: "/icons/automapper.png",
-        name: "AutoMapper",
+        component: SkillAutoMapper,
       },
       {
         category: "Архитектура",
-        icon: "/icons/docker.webp",
-        name: "Docker",
+        component: SkillDocker,
       },
       {
         category: "Front-End",
-        icon: "/icons/typescript.png",
-        name: "TypeScript",
+        component: SkillTypeScript,
       },
       {
         category: "Front-End",
-        icon: "/icons/shadcn.png",
-        name: "shadcn/ui",
+        component: SkillShadcn,
       },
     ],
     year: "2025",
@@ -129,33 +131,27 @@ const projects: Project[] = [
     stack: [
       {
         category: "Front-End",
-        icon: "/icons/nextjs.webp",
-        name: "NextJS",
+        component: SkillNextJS,
       },
       {
         category: "Front-End",
-        icon: "/icons/react.webp",
-        name: "React",
+        component: SkillReact,
       },
       {
         category: "Front-End",
-        icon: "/icons/typescript.png",
-        name: "TypeScript",
+        component: SkillTypeScript,
       },
       {
         category: "Front-End",
-        icon: "/icons/shadcn.png",
-        name: "shadcn/ui",
+        component: SkillShadcn,
       },
       {
         category: "Front-End",
-        icon: "/icons/reactquery.png",
-        name: "React Query",
+        component: SkillReactQuery,
       },
       {
         category: "Архитектура",
-        icon: "/icons/docker.webp",
-        name: "Docker",
+        component: SkillDocker,
       },
     ],
     images: ["/projects/fsp/1.png"],
@@ -171,48 +167,39 @@ const projects: Project[] = [
     stack: [
       {
         category: "Front-End",
-        icon: "/icons/react.webp",
-        name: "React",
+        component: SkillReact,
       },
       {
         category: "Front-End",
-        icon: "/icons/typescript.png",
-        name: "TypeScript",
+        component: SkillTypeScript,
       },
       {
         category: "Front-End",
-        icon: "/icons/zustand.png",
-        name: "Zustand",
+        component: SkillZustand,
       },
       {
         category: "Front-End",
-        icon: "/icons/shadcn.png",
-        name: "shadcn/ui",
+        component: SkillShadcn,
       },
       {
         category: "Back-End",
-        icon: "/icons/dotnetcore.png",
-        name: ".NET Core",
+        component: SkillDotNet,
       },
       {
         category: "Back-End",
-        icon: "/icons/efcore.png",
-        name: "Entity Framework Core",
+        component: SkillEFCore,
       },
       {
         category: "Приложение",
-        icon: "/icons/wpf.svg",
-        name: "WPF",
+        component: SkillWPF,
       },
       {
         category: "Приложение",
-        icon: "/icons/chromium.png",
-        name: "Chromium Engine",
+        component: SkillChromium,
       },
       {
         category: "Архитектура",
-        icon: "/icons/docker.webp",
-        name: "Docker",
+        component: SkillDocker,
       },
     ],
     images: ["/projects/gate/1.png", "/projects/gate/2.png"],
@@ -227,63 +214,51 @@ const projects: Project[] = [
     stack: [
       {
         category: "Front-End",
-        icon: "/icons/nextjs.webp",
-        name: "NextJS",
+        component: SkillNextJS,
       },
       {
         category: "Front-End",
-        icon: "/icons/react.webp",
-        name: "React",
+        component: SkillReact,
       },
       {
         category: "Front-End",
-        icon: "/icons/reactquery.png",
-        name: "React Query",
+        component: SkillReactQuery,
       },
       {
         category: "Front-End",
-        icon: "/icons/mantine.png",
-        name: "Mantine UI",
+        component: SkillMantine,
       },
       {
         category: "Front-End",
-        icon: "/icons/nextui.png",
-        name: "NextUI",
+        component: SkillHeroUI,
       },
       {
         category: "Back-End",
-        icon: "/icons/dotnetcore.png",
-        name: ".NET Core",
+        component: SkillDotNet,
       },
       {
         category: "Back-End",
-        icon: "/icons/efcore.png",
-        name: "Entity Framework Core",
+        component: SkillEFCore,
       },
       {
         category: "Back-End",
-        icon: "/icons/awss3.png",
-        name: "Amazon S3",
+        component: SkillAWSS3,
       },
       {
         category: "Back-End",
-        icon: "/icons/automapper.png",
-        name: "AutoMapper",
+        component: SkillAutoMapper,
       },
       {
         category: "Back-End",
-        icon: "/icons/grpc.png",
-        name: "gRPC",
+        component: SkillGRPC,
       },
       {
         category: "Архитектура",
-        icon: "/icons/docker.webp",
-        name: "Docker",
+        component: SkillDocker,
       },
       {
         category: "Архитектура",
-        icon: "/icons/rabbitmq.png",
-        name: "RabbitMQ",
+        component: SkillRabbitMQ,
       },
     ],
     images: [
@@ -302,53 +277,43 @@ const projects: Project[] = [
     stack: [
       {
         category: "Front-End",
-        icon: "/icons/nextjs.webp",
-        name: "NextJS",
+        component: SkillNextJS,
       },
       {
         category: "Front-End",
-        icon: "/icons/react.webp",
-        name: "React",
+        component: SkillReact,
       },
       {
         category: "Front-End",
-        icon: "/icons/reactquery.png",
-        name: "React Query",
+        component: SkillReactQuery,
       },
       {
         category: "Front-End",
-        icon: "/icons/nextui.png",
-        name: "NextUI",
+        component: SkillHeroUI,
       },
       {
         category: "Back-End",
-        icon: "/icons/dotnetcore.png",
-        name: ".NET Core",
+        component: SkillDotNet,
       },
       {
         category: "Back-End",
-        icon: "/icons/efcore.png",
-        name: "Entity Framework Core",
+        component: SkillEFCore,
       },
       {
         category: "Back-End",
-        icon: "/icons/awss3.png",
-        name: "Amazon S3",
+        component: SkillAWSS3,
       },
       {
         category: "Back-End",
-        icon: "/icons/automapper.png",
-        name: "AutoMapper",
+        component: SkillAutoMapper,
       },
       {
         category: "Архитектура",
-        icon: "/icons/docker.webp",
-        name: "Docker",
+        component: SkillDocker,
       },
       {
         category: "Архитектура",
-        icon: "/icons/rabbitmq.png",
-        name: "RabbitMQ",
+        component: SkillRabbitMQ,
       },
     ],
     images: [
@@ -368,23 +333,19 @@ const projects: Project[] = [
     stack: [
       {
         category: "",
-        icon: "/icons/nextjs.webp",
-        name: "NextJS",
+        component: SkillNextJS,
       },
       {
         category: "",
-        icon: "/icons/typescript.png",
-        name: "TypeScript",
+        component: SkillTypeScript,
       },
       {
         category: "",
-        icon: "/icons/prisma.png",
-        name: "Prisma",
+        component: SkillPrisma,
       },
       {
         category: "",
-        icon: "/icons/mantine.png",
-        name: "Mantine UI",
+        component: SkillMantine,
       },
     ],
     images: ["/projects/paper/1.png"],
@@ -399,38 +360,31 @@ const projects: Project[] = [
     stack: [
       {
         category: "Front-End",
-        icon: "/icons/nextjs.webp",
-        name: "NextJS",
+        component: SkillNextJS,
       },
       {
         category: "Front-End",
-        icon: "/icons/react.webp",
-        name: "React",
+        component: SkillReact,
       },
       {
         category: "Front-End",
-        icon: "/icons/reactquery.png",
-        name: "React Query",
+        component: SkillReactQuery,
       },
       {
         category: "Front-End",
-        icon: "/icons/nextui.png",
-        name: "NextUI",
+        component: SkillHeroUI,
       },
       {
         category: "Back-End",
-        icon: "/icons/dotnetcore.png",
-        name: ".NET Core",
+        component: SkillDotNet,
       },
       {
         category: "Back-End",
-        icon: "/icons/efcore.png",
-        name: "Entity Framework Core",
+        component: SkillEFCore,
       },
       {
         category: "Архитектура",
-        icon: "/icons/docker.webp",
-        name: "Docker",
+        component: SkillDocker,
       },
     ],
     images: ["/projects/fontnet/1.png", "/projects/fontnet/2.png"],

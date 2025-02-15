@@ -1,3 +1,6 @@
+import { PredefinedSkillProps } from "@/components/skill";
+import React from "react";
+
 export type Project = {
   name: string;
   description: string;
@@ -12,7 +15,6 @@ export type Project = {
 };
 
 export type Technology = {
-  icon: string;
-  name: string;
+  component: React.ElementType<PredefinedSkillProps>;
   category: string;
 };
