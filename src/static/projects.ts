@@ -58,10 +58,70 @@ const projects: Project[] = [
       "/projects/dotstat/4.png",
     ],
     pageName: "dotstat",
-    year: "2024",
+    year: "2024-2025",
     // highlightClassName: "from-green-400 to-cyan-400",
     isPresent: true,
     gitHubUrl: "https://github.com/al-dotstat",
+  },
+  {
+    name: "MuzInt",
+    description: "",
+    stack: [
+      {
+        category: "Front-End",
+        icon: "/icons/nextjs.webp",
+        name: "NextJS",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/react.webp",
+        name: "React",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/reactquery.png",
+        name: "React Query",
+      },
+      {
+        category: "Back-End",
+        icon: "/icons/dotnetcore.png",
+        name: ".NET Core",
+      },
+      {
+        category: "Back-End",
+        icon: "/icons/efcore.png",
+        name: "Entity Framework Core",
+      },
+      {
+        category: "Back-End",
+        icon: "/icons/automapper.png",
+        name: "AutoMapper",
+      },
+      {
+        category: "Архитектура",
+        icon: "/icons/docker.webp",
+        name: "Docker",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/typescript.png",
+        name: "TypeScript",
+      },
+      {
+        category: "Front-End",
+        icon: "/icons/shadcn.png",
+        name: "shadcn/ui",
+      },
+    ],
+    year: "2025",
+    pageName: "muzint",
+    images: [
+      "/projects/muzint/3.png",
+      "/projects/muzint/4.png",
+      "/projects/muzint/1.png",
+      "/projects/muzint/2.png",
+    ],
+    url: "https://muzint.obana.club",
   },
   {
     name: "ФСП",
