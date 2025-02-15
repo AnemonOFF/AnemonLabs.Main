@@ -1,5 +1,5 @@
 import React from "react";
-import SidebarElement, { SidebarElementProps } from "./sidebarElement";
+import SidebarElement from "./sidebarElement";
 import { Button } from "@heroui/button";
 import ThemeSwitcher from "../themeSwitcher";
 import Link from "next/link";

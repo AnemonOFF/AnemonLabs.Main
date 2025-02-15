@@ -2,14 +2,19 @@
   "layout": {
     "sidebar": {
       "contacts": "About",
-      "cv": "Get CV"
+      "cv": "Get CV",
+      "projects": "Projects"
+    },
+    "footer": {
+      "madeby": "made by"
     }
   },
   "page": {
     "index": {
       "name": "Dmitry Dudarev",
       "description": "Hi, I'm a Front-End developer, passionate about creating different kinds of applications for more than 5 years.",
-      "stack": "Right now, my favourite stack consists of"
+      "stack": "Right now, my favourite stack consists of",
+      "cv": "Get CV"
     },
     "project": {
       "stack": "Technology Stack"

@@ -16,7 +16,7 @@ const SkillShadcn: React.FC<PredefinedSkillProps> = ({ iconOnly, skills }) => {
     <Skill
       name="shadcn"
       description={description}
-      iconSrc={getIconSrc("react.png", theme as "light" | "dark")}
+      iconSrc={getIconSrc("shadcn.png", theme as "light" | "dark")}
       link="https://ui.shadcn.com/"
       iconOnly={iconOnly}
     />

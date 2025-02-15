@@ -1,3 +1,5 @@
+import FadeEffect from "@/animations/fadeEffect";
+import SocialLinks from "@/components/links/socialLinks";
 import {
   SkillNextJS,
   SkillReact,
@@ -9,8 +11,7 @@ import {
 import { getDictionary } from "@/i18n/get-dictionary";
 import { Locale } from "@/i18n/i18n-config";
 import { Button } from "@heroui/button";
-import { Divider } from "@heroui/divider";
-import { IconBrandGithub, IconBrandTelegram } from "@tabler/icons-react";
+import { IconFileInfo } from "@tabler/icons-react";
 import Link from "next/link";
 
 export default async function Home(
@@ -24,11 +25,11 @@ export default async function Home(
 
   return (
     <div className="w-full min-h-full flex flex-col justify-center gap-5">
-      <main className="m-5">
-        <div className="flex flex-col gap-5 items-center">
+      <FadeEffect direction="up">
+        <main className="m-5 flex flex-col gap-5 items-center">
           <div className="max-w-[550px] space-y-5">
-            <div className="flex gap-2 items-end">
-              <h2 className="text-4xl text-transparent bg-clip-text bg-gradient-to-br from-foreground from-50% to-foreground-500 font-bold">
+            <div className="flex max-lg:flex-col lg:gap-2 lg:items-end">
+              <h2 className="text-4xl text-transparent bg-clip-text bg-gradient-to-br from-foreground to-foreground-500 font-bold">
                 {pageDictionary.name}
               </h2>
               <h3 className="text-xl text-foreground-500 font-semibold">
@@ -50,28 +51,20 @@ export default async function Home(
           </div>
           <div className="max-w-96 w-full h-[1px] bg-gradient-to-r from-background via-divider via-[percentage:20%_80%] to-background" />
           <div className="">
-            <Link
-              href={"https://t.me/anemonoff"}
-              className="flex"
+            <SocialLinks />
+            <Button
+              as={Link}
+              href={`/cv/${params.lang}.pdf`}
+              variant="light"
+              className="justify-start lg:hidden"
               target="_blank"
             >
-              <Button
-                variant="light"
-                className="justify-start text-blue-400"
-                fullWidth
-              >
-                <IconBrandTelegram />
-                Telegram
-              </Button>
-            </Link>
-            <Link href={"https://github.com/anemonoff"} target="_blank">
-              <Button variant="light" className="justify-start" fullWidth>
-                <IconBrandGithub /> GitHub
-              </Button>
-            </Link>
+              <IconFileInfo />
+              {pageDictionary.cv}
+            </Button>
           </div>
-        </div>
-      </main>
+        </main>
+      </FadeEffect>
     </div>
   );
 }
