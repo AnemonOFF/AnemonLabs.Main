@@ -28,7 +28,7 @@ export default async function Home(
         <div className="flex flex-col gap-5 items-center">
           <div className="max-w-[550px] space-y-5">
             <div className="flex gap-2 items-end">
-              <h2 className="text-3xl text-foreground font-bold">
+              <h2 className="text-4xl text-transparent bg-clip-text bg-gradient-to-br from-foreground from-50% to-foreground-500 font-bold">
                 {pageDictionary.name}
               </h2>
               <h3 className="text-xl text-foreground-500 font-semibold">
@@ -48,7 +48,7 @@ export default async function Home(
               <SkillShadcn skills={dictionary.skills} iconOnly />
             </div>
           </div>
-          <Divider className="max-w-96" />
+          <div className="max-w-96 w-full h-[1px] bg-gradient-to-r from-background via-divider via-[percentage:20%_80%] to-background" />
           <div className="">
             <Link
               href={"https://t.me/anemonoff"}

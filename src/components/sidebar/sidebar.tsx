@@ -63,7 +63,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             />
           ))}
         </nav>
-        <div className="w-[1px] bg-divider max-lg:hidden" />
+        <div className="w-[1px] bg-gradient-to-b from-background via-divider via-[percentage:20%_80%] to-background max-lg:hidden" />
       </div>
       <div className="flex items-center justify-center gap-2">
         <LocaleSwitcher />

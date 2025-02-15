@@ -17,11 +17,9 @@ export async function generateStaticParams() {
   return pageNames;
 }
 
-export default async function ProjectPage(
-  props: {
-    params: Promise<{ name: string; lang: Locale }>;
-  }
-) {
+export default async function ProjectPage(props: {
+  params: Promise<{ name: string; lang: Locale }>;
+}) {
   const params = await props.params;
   const name = params.name;
   const dictionary = (await getDictionary(params.lang)).page.project;
@@ -64,7 +62,9 @@ export default async function ProjectPage(
                 <IconBrandGithub />
               </Button>
             )}
-            {project.name}
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-foreground to-foreground-500">
+              {project.name}
+            </span>
           </h1>
           <h2 className="text-2xl font-semibold mt-5">{dictionary.stack}</h2>
           <div className="flex flex-wrap gap-5 justify-between">
