@@ -3,7 +3,7 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { Locale } from "@/i18n/i18n-config";
 import projects from "@/static/projects";
 import { GroupBy } from "@/utils/array";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,11 +17,12 @@ export async function generateStaticParams() {
   return pageNames;
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: { name: string; lang: Locale };
-}) {
+export default async function ProjectPage(
+  props: {
+    params: Promise<{ name: string; lang: Locale }>;
+  }
+) {
+  const params = await props.params;
   const name = params.name;
   const dictionary = (await getDictionary(params.lang)).page.project;
   const project = projects.find((p) => p.pageName === name);

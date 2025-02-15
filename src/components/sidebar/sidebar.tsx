@@ -1,10 +1,10 @@
 import React from "react";
 import SidebarElement, { SidebarElementProps } from "./sidebarElement";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import ThemeSwitcher from "../themeSwitcher";
 import Link from "next/link";
 import { IconAddressBook, IconFileInfo } from "@tabler/icons-react";
-import { cn } from "@nextui-org/react";
+import { cn } from "@heroui/react";
 import projects from "@/static/projects";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { LocaleSwitcher } from "../localeSwitcher";
@@ -36,7 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           href="/"
           variant="light"
           className="mr-5"
-          onClick={onLinkClick}
+          onPress={onLinkClick}
         >
           <IconAddressBook className="text-foreground-500" />
           {dictionary.contacts}

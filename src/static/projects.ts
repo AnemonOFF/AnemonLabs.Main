@@ -161,7 +161,6 @@ const projects: Project[] = [
     images: ["/projects/fsp/1.png"],
     pageName: "fsp",
     year: "2024",
-    isPresent: true,
     gitHubUrl:
       "https://github.com/8kelena8/Sports-Programming-Sverdlovsk-Portal/tree/feature/no-ref/front/home-page",
   },

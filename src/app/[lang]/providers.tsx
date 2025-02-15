@@ -1,12 +1,14 @@
-import { NextUIProvider } from "@nextui-org/react";
+"use client";
+
+import { HeroUIProvider } from "@heroui/react";
 import { ThemeProvider } from "next-themes";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <NextUIProvider>
+    <HeroUIProvider>
       <ThemeProvider attribute="class" defaultTheme="light">
         {children}
       </ThemeProvider>
-    </NextUIProvider>
+    </HeroUIProvider>
   );
 }

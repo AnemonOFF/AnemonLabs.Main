@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import { IconLoader, IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
@@ -16,7 +16,7 @@ const ThemeSwitcher: React.FC = () => {
 
   return (
     <Button
-      onClick={() =>
+      onPress={() =>
         setTheme(() => (currentTheme === "light" ? "dark" : "light"))
       }
       isIconOnly

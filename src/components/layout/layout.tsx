@@ -2,8 +2,8 @@
 
 import React, { PropsWithChildren, useState } from "react";
 import Sidebar from "../sidebar";
-import { cn } from "@nextui-org/react";
-import { Button } from "@nextui-org/button";
+import { cn } from "@heroui/react";
+import { Button } from "@heroui/button";
 import { IconMenu2 } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children, dictionary, locale }) => {
         )}
       >
         <div className="bg-background/70 w-full h-full p-1">
-          <Button variant="light" onClick={() => setOpened(true)} isIconOnly>
+          <Button variant="light" onPress={() => setOpened(true)} isIconOnly>
             <IconMenu2 />
           </Button>
         </div>

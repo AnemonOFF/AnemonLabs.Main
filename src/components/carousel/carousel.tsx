@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@nextui-org/react";
-import { Button } from "@nextui-org/button";
+import { cn } from "@heroui/react";
+import { Button } from "@heroui/button";
 import Image from "next/image";
 import React, { useState } from "react";
 import { IconCaretLeft, IconCaretRight } from "@tabler/icons-react";
@@ -65,7 +65,7 @@ const Carousel: React.FC<CarouselProps> = ({ imageUrls, className }) => {
           variant="flat"
           disabled={currentIndex === 0}
           isIconOnly
-          onClick={() => setIndex((prev) => prev - 1)}
+          onPress={() => setIndex((prev) => prev - 1)}
         >
           <IconCaretLeft size={35} />
         </Button>
@@ -77,7 +77,7 @@ const Carousel: React.FC<CarouselProps> = ({ imageUrls, className }) => {
           variant="flat"
           disabled={currentIndex === imageUrls.length - 1}
           isIconOnly
-          onClick={() => setIndex((prev) => prev + 1)}
+          onPress={() => setIndex((prev) => prev + 1)}
         >
           <IconCaretRight size={35} />
         </Button>

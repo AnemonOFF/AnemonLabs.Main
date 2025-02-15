@@ -1,15 +1,16 @@
 import { getDictionary } from "@/i18n/get-dictionary";
 import { Locale } from "@/i18n/i18n-config";
-import { Button } from "@nextui-org/button";
-import { Divider } from "@nextui-org/divider";
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
 import { IconBrandGithub, IconBrandTelegram } from "@tabler/icons-react";
 import Link from "next/link";
 
-export default async function Home({
-  params,
-}: Readonly<{
-  params: { lang: Locale };
-}>) {
+export default async function Home(
+  props: Readonly<{
+    params: Promise<{ lang: Locale }>;
+  }>
+) {
+  const params = await props.params;
   const dictionary = (await getDictionary(params.lang)).page.index;
 
   return (

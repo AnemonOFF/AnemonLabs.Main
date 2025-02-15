@@ -1,7 +1,7 @@
 "use client";
 
 import { Locale } from "@/i18n/i18n-config";
-import { cn } from "@nextui-org/react";
+import { cn } from "@heroui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
