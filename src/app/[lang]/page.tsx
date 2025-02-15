@@ -1,3 +1,11 @@
+import {
+  SkillNextJS,
+  SkillReact,
+  SkillReactQuery,
+  SkillShadcn,
+  SkillTailwind,
+  SkillZustand,
+} from "@/components/skill";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { Locale } from "@/i18n/i18n-config";
 import { Button } from "@heroui/button";
@@ -11,37 +19,53 @@ export default async function Home(
   }>
 ) {
   const params = await props.params;
-  const dictionary = (await getDictionary(params.lang)).page.index;
+  const dictionary = await getDictionary(params.lang);
+  const pageDictionary = dictionary.page.index;
 
   return (
     <div className="w-full min-h-full flex flex-col justify-center gap-5">
       <main className="m-5">
         <div className="flex flex-col gap-5 items-center">
-          <div className="">
+          <div className="max-w-[550px] space-y-5">
             <div className="flex gap-2 items-end">
-              <h2 className="text-3xl text-foreground font-bold">Anemon</h2>
+              <h2 className="text-3xl text-foreground font-bold">
+                {pageDictionary.name}
+              </h2>
               <h3 className="text-xl text-foreground-500 font-semibold">
-                {dictionary.name}
+                aka Anemon
               </h3>
             </div>
-            <h1 className="text-3xl text-foreground font-bold">
-              Full-Stack Software Engineer
-            </h1>
-            <div className="flex">
-              <Link
-                href={"https://t.me/anemonoff"}
-                className="flex text-blue-400"
-                target="_blank"
-              >
-                <IconBrandTelegram />
-                Telegram
-              </Link>
+            <p className="dark:text-foreground-600">
+              {pageDictionary.description}
+            </p>
+            <p className="dark:text-foreground-600">{pageDictionary.stack}:</p>
+            <div className="flex items-center gap-2">
+              <SkillNextJS skills={dictionary.skills} iconOnly />
+              <SkillReact skills={dictionary.skills} iconOnly />
+              <SkillZustand skills={dictionary.skills} iconOnly />
+              <SkillReactQuery skills={dictionary.skills} iconOnly />
+              <SkillTailwind skills={dictionary.skills} iconOnly />
+              <SkillShadcn skills={dictionary.skills} iconOnly />
             </div>
           </div>
           <Divider className="max-w-96" />
           <div className="">
+            <Link
+              href={"https://t.me/anemonoff"}
+              className="flex"
+              target="_blank"
+            >
+              <Button
+                variant="light"
+                className="justify-start text-blue-400"
+                fullWidth
+              >
+                <IconBrandTelegram />
+                Telegram
+              </Button>
+            </Link>
             <Link href={"https://github.com/anemonoff"} target="_blank">
-              <Button variant="flat">
+              <Button variant="light" className="justify-start" fullWidth>
                 <IconBrandGithub /> GitHub
               </Button>
             </Link>

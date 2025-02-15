@@ -30,7 +30,7 @@ const SidebarElement: React.FC<SidebarElementProps> = ({
   const isActive = pathname == url;
   const className = `bg-gradient-to-b ${highlightClassName}`;
   const presentClassName = isPresent
-    ? "text-blue-400 font-bold"
+    ? "text-green-400 font-bold"
     : "text-foreground-400";
 
   return (

@@ -1,16 +1,41 @@
 {
   "layout": {
     "sidebar": {
-      "contacts": "Contacts",
+      "contacts": "About",
       "cv": "Get CV"
     }
   },
   "page": {
     "index": {
-      "name": "aka Dmitriy"
+      "name": "Dmitry Dudarev",
+      "description": "Hi, I'm a Front-End developer, passionate about creating different kinds of applications for more than 5 years.",
+      "stack": "Right now, my favourite stack consists of"
     },
     "project": {
       "stack": "Technology Stack"
+    }
+  },
+  "skills": {
+    "nextjs": {
+      "description": "Currently the best React (and in general) meta framework in my opinion, very handy roaming with SSR and SSG functionality."
+    },
+    "react": {
+      "description": "The most convenient JS framework for me due to its closeness to native JS. NextJS is built on top of it."
+    },
+    "typescript": {
+      "description": "Typing for JavaScript, musthave, modern projects can't exist without it."
+    },
+    "tailwind": {
+      "description": "An incredibly handy tool for quick styling, with many awesome UI libraries built on top of it."
+    },
+    "shadcn": {
+      "description": "Unusual, fully customisable UI kit on TailwindCSS, I use it in all new projects"
+    },
+    "zustand": {
+      "description": "Fast, scalable state manager built on Flux and Immutable state principles"
+    },
+    "reactquery": {
+      "description": "Hooks for request management, usually used in tandem with Axios for API communication"
     }
   }
 }
