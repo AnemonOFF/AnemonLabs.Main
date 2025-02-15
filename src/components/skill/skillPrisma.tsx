@@ -14,7 +14,7 @@ const SkillPrisma: React.FC<PredefinedSkillProps> = ({ iconOnly, skills }) => {
 
   return (
     <Skill
-      name="React"
+      name="Prisma"
       description={description}
       iconSrc={getIconSrc("prisma.webp", theme as "light" | "dark")}
       link="https://www.prisma.io/"
