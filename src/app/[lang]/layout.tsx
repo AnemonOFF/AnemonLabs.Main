@@ -42,8 +42,8 @@ export default async function RootLayout(
         ></Script>
         <Providers>
           <div className="absolute inset-0 max-lg:top-32 overflow-hidden blur-3xl">
-            <div className="absolute -top-10 left-[20%] h-48 w-96 bg-emerald-400/20 rounded-full" />
-            <div className="absolute bottom-[15%] right-[5%] w-96 h-32 rotate-12 bg-emerald-400/20 rounded-full" />
+            <div className="absolute -top-10 left-[20%] h-48 w-96 dark:h-56 dark:w-[420px] bg-emerald-400/20 dark:bg-emerald-400/15 rounded-full animate-move-top" />
+            <div className="absolute bottom-[15%] right-[5%] w-96 h-32 dark:h-44 dark:w-[390px] rotate-12 bg-emerald-400/20 dark:bg-emerald-400/15 rounded-full animate-move-bottom" />
           </div>
           <div className="relative">
             <Layout dictionary={dictionary["layout"]} locale={params.lang}>
