@@ -1,4 +1,5 @@
 import FadeEffect from "@/animations/fadeEffect";
+import { NavHint } from "@/components/layout";
 import SocialLinks from "@/components/links/socialLinks";
 import {
   SkillNextJS,
@@ -24,7 +25,8 @@ export default async function Home(
   const pageDictionary = dictionary.page.index;
 
   return (
-    <div className="w-full min-h-full flex flex-col justify-center gap-5">
+    <div className="relative w-full min-h-full flex flex-col justify-center gap-5 pt-16">
+      <NavHint dictionary={dictionary.layout} />
       <FadeEffect direction="up">
         <main className="m-5 flex flex-col gap-5 items-center">
           <div className="max-w-[550px] space-y-5">

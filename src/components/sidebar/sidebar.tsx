@@ -11,18 +11,12 @@ import { LocaleSwitcher } from "../localeSwitcher";
 import { Locale } from "@/i18n/i18n-config";
 
 export interface SidebarProps {
-  onLinkClick: () => void;
   className?: string;
   dictionary: Awaited<ReturnType<typeof getDictionary>>["layout"]["sidebar"];
   locale: Locale;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({
-  onLinkClick,
-  className,
-  dictionary,
-  locale,
-}) => {
+const Sidebar: React.FC<SidebarProps> = ({ className, dictionary, locale }) => {
   return (
     <aside
       className={cn(
@@ -31,13 +25,15 @@ const Sidebar: React.FC<SidebarProps> = ({
       )}
     >
       <div className="flex flex-col">
-        <Button
-          as={Link}
+        {/* <Link
           href="/"
-          variant="light"
-          className="mr-5"
-          onPress={onLinkClick}
+          className="flex gap-2 items-center"
+          onClick={onLinkClick}
         >
+          <IconAddressBook className="text-foreground-500" />
+          {dictionary.contacts}
+        </Link> */}
+        <Button as={Link} href="/" variant="light" className="mr-5">
           <IconAddressBook className="text-foreground-500" />
           {dictionary.contacts}
         </Button>
@@ -55,12 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       <div className="flex items-stretch max-lg:justify-center gap-5 max-h-full overflow-auto">
         <nav className="gap-5 flex flex-col mt-5">
           {projects.map((project) => (
-            <SidebarElement
-              key={project.name}
-              locale={locale}
-              onClick={onLinkClick}
-              {...project}
-            />
+            <SidebarElement key={project.name} locale={locale} {...project} />
           ))}
         </nav>
         <div className="w-[1px] bg-gradient-to-b from-background via-divider via-[percentage:20%_80%] to-background max-lg:hidden" />

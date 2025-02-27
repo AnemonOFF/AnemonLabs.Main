@@ -5,7 +5,6 @@ import projects from "@/static/projects";
 import { GroupBy } from "@/utils/array";
 import { Button } from "@heroui/button";
 import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";

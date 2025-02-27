@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../sidebar";
 import { cn } from "@heroui/react";
 import { Button } from "@heroui/button";
@@ -26,8 +26,12 @@ const Layout: React.FC<LayoutProps> = ({ children, dictionary, locale }) => {
   const pathName = usePathname();
   const [isOpened, setOpened] = useState(() => pathName === "/");
 
+  useEffect(() => {
+    setOpened(false);
+  }, [pathName]);
+
   return (
-    <div className="min-h-screen grid grid-rows-1 grid-cols-[auto_1fr] max-lg:grid-cols-1">
+    <div className="min-h-screen grid grid-rows-1 grid-cols-[auto_1fr] max-lg:grid-cols-1 max-lg:grid-rows-[auto_1fr]">
       <div
         className={cn(
           "lg:hidden w-full text-center backdrop-blur sticky top-0 z-30",
@@ -45,7 +49,7 @@ const Layout: React.FC<LayoutProps> = ({ children, dictionary, locale }) => {
           >
             <IconMenu2 />
           </Button>
-          <div className="absolute top-[calc(100%-40px)] left-[calc(50%+45px)] -translate-x-1/2 rotate-[10deg] pointer-events-none">
+          {/* <div className="absolute top-[calc(100%-40px)] left-[calc(50%+45px)] -translate-x-1/2 rotate-[10deg] pointer-events-none">
             <img
               src="/icons/arrow.png"
               width={100}
@@ -58,12 +62,13 @@ const Layout: React.FC<LayoutProps> = ({ children, dictionary, locale }) => {
             >
               {dictionary.sidebar.projects}
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
       <Sidebar
-        className={cn("transition-all", { "max-lg:hidden": !isOpened })}
-        onLinkClick={() => setOpened(false)}
+        className={cn("transition-all", {
+          "max-lg:hidden": !isOpened,
+        })}
         dictionary={dictionary.sidebar}
         locale={locale}
       />

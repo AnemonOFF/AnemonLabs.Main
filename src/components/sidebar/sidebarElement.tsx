@@ -12,7 +12,6 @@ export interface SidebarElementProps {
   pageName: string;
   highlightClassName?: string;
   isPresent?: boolean;
-  onClick: () => void;
   locale: Locale;
 }
 
@@ -22,7 +21,6 @@ const SidebarElement: React.FC<SidebarElementProps> = ({
   pageName,
   highlightClassName,
   isPresent,
-  onClick,
   locale,
 }) => {
   const pathname = usePathname();
@@ -34,11 +32,7 @@ const SidebarElement: React.FC<SidebarElementProps> = ({
     : "text-foreground-400";
 
   return (
-    <Link
-      className={cn("rounded-xl pl-1 w-full", className)}
-      href={url}
-      onClick={onClick}
-    >
+    <Link className={cn("rounded-xl pl-1 w-full", className)} href={url}>
       <div className="rounded-lg bg-background w-full">
         <div
           className={cn(

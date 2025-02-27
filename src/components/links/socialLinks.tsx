@@ -25,33 +25,35 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
       )}
     >
       <Tooltip content="Telegram" isDisabled={!small} showArrow>
-        <Link href={"https://t.me/anemonoff"} className="flex" target="_blank">
-          <Button
-            variant="light"
-            className={cn("text-blue-400", {
-              "justify-start": !small && orientation !== "horizontal",
-            })}
-            fullWidth={!small && orientation !== "horizontal"}
-            isIconOnly={small}
-          >
-            <IconBrandTelegram />
-            {small ? null : "Telegram"}
-          </Button>
-        </Link>
+        <Button
+          as={Link}
+          href={"https://t.me/anemonoff"}
+          target="_blank"
+          variant="light"
+          className={cn("text-blue-400", {
+            "justify-start": !small && orientation !== "horizontal",
+          })}
+          fullWidth={!small && orientation !== "horizontal"}
+          isIconOnly={small}
+        >
+          <IconBrandTelegram />
+          {small ? null : "Telegram"}
+        </Button>
       </Tooltip>
       <Tooltip content="GitHub" isDisabled={!small} showArrow>
-        <Link href={"https://github.com/anemonoff"} target="_blank">
-          <Button
-            variant="light"
-            className={cn("", {
-              "justify-start": !small && orientation !== "horizontal",
-            })}
-            fullWidth={!small && orientation !== "horizontal"}
-            isIconOnly={small}
-          >
-            <IconBrandGithub /> {small ? null : "GitHub"}
-          </Button>
-        </Link>
+        <Button
+          as={Link}
+          href={"https://github.com/anemonoff"}
+          target="_blank"
+          variant="light"
+          className={cn("", {
+            "justify-start": !small && orientation !== "horizontal",
+          })}
+          fullWidth={!small && orientation !== "horizontal"}
+          isIconOnly={small}
+        >
+          <IconBrandGithub /> {small ? null : "GitHub"}
+        </Button>
       </Tooltip>
     </div>
   );
