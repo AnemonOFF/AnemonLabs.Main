@@ -3,7 +3,7 @@ import SidebarElement from "./sidebarElement";
 import { Button } from "@heroui/button";
 import ThemeSwitcher from "../themeSwitcher";
 import Link from "next/link";
-import { IconAddressBook, IconFileInfo } from "@tabler/icons-react";
+import { IconAddressBook, IconFileInfo, IconX } from "@tabler/icons-react";
 import { cn } from "@heroui/react";
 import projects from "@/static/projects";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -14,9 +14,15 @@ export interface SidebarProps {
   className?: string;
   dictionary: Awaited<ReturnType<typeof getDictionary>>["layout"]["sidebar"];
   locale: Locale;
+  onClose: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ className, dictionary, locale }) => {
+const Sidebar: React.FC<SidebarProps> = ({
+  className,
+  dictionary,
+  locale,
+  onClose,
+}) => {
   return (
     <aside
       className={cn(
@@ -25,14 +31,9 @@ const Sidebar: React.FC<SidebarProps> = ({ className, dictionary, locale }) => {
       )}
     >
       <div className="flex flex-col">
-        {/* <Link
-          href="/"
-          className="flex gap-2 items-center"
-          onClick={onLinkClick}
-        >
-          <IconAddressBook className="text-foreground-500" />
-          {dictionary.contacts}
-        </Link> */}
+        <Button variant="flat" onPress={onClose}>
+          <IconX className="text-foreground-500" />
+        </Button>
         <Button as={Link} href="/" variant="light" className="mr-5">
           <IconAddressBook className="text-foreground-500" />
           {dictionary.contacts}

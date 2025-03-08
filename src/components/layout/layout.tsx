@@ -9,12 +9,6 @@ import { IconMenu2 } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { Locale } from "@/i18n/i18n-config";
-import { Caveat } from "next/font/google";
-
-const caveat = Caveat({
-  weight: "400",
-  subsets: ["latin", "cyrillic"],
-});
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -71,6 +65,7 @@ const Layout: React.FC<LayoutProps> = ({ children, dictionary, locale }) => {
         })}
         dictionary={dictionary.sidebar}
         locale={locale}
+        onClose={() => setOpened(false)}
       />
       <div className={cn({ "max-lg:hidden": isOpened })}>{children}</div>
     </div>
