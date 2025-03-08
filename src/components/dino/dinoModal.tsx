@@ -155,7 +155,7 @@ const DinoModal: React.FC<DinoModalProps> = ({ dictionary }) => {
           id="dinoModal"
         >
           <div className="flex justify-between gap-2 items-center">
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 text-black">
               <Image
                 src={"/icons/dinosaur.png"}
                 alt="Динозаврик"

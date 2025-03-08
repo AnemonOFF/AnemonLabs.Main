@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       )}
     >
       <div className="flex flex-col">
-        <Button variant="flat" onPress={onClose}>
+        <Button variant="flat" onPress={onClose} className="lg:hidden">
           <IconX className="text-foreground-500" />
         </Button>
         <Button as={Link} href="/" variant="light" className="mr-5">
