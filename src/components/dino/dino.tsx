@@ -3,20 +3,29 @@
 import React, { useEffect, useState } from "react";
 import DinoGame from "react-chrome-dino-ts";
 import "./style.css";
+import { Skeleton } from "@heroui/react";
 
-export interface DinoProps {}
+export interface DinoProps {
+  firstMount: boolean;
+}
 
-const Dino: React.FC<DinoProps> = ({}) => {
-  const [isLoading, setLoading] = useState(true);
+const Dino: React.FC<DinoProps> = ({ firstMount }) => {
+  const [mounted, setMounted] = useState(false);
+  const [hidden, setHidden] = useState(!firstMount);
 
   useEffect(() => {
-    setLoading(false);
+    if (hidden && firstMount) setHidden(false);
+  }, [hidden, firstMount]);
+
+  useEffect(() => {
+    setMounted(true);
   }, []);
 
-  if (isLoading) return <div className=""></div>;
+  if (!mounted || hidden)
+    return <Skeleton className="rounded-xl w-full h-60" />;
   return (
     <div className="w-full">
-      <DinoGame instructions="Нажмите пробел для прыжка" />
+      <DinoGame />
     </div>
   );
 };

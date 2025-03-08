@@ -1,4 +1,5 @@
 import FadeEffect from "@/animations/fadeEffect";
+import DinoModal from "@/components/dino";
 import { NavHint } from "@/components/layout";
 import SocialLinks from "@/components/links/socialLinks";
 import {
@@ -67,6 +68,7 @@ export default async function Home(
           </div>
         </main>
       </FadeEffect>
+      <DinoModal />
     </div>
   );
 }

@@ -1,2 +1,2 @@
-import Dino from "./dino";
-export default Dino;
+import DinoModal from "./dinoModal";
+export default DinoModal;
