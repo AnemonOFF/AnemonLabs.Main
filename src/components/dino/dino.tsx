@@ -25,7 +25,7 @@ const Dino: React.FC<DinoProps> = ({ firstMount }) => {
     return <Skeleton className="rounded-xl w-full h-60" />;
   return (
     <div className="w-full">
-      <DinoGame />
+      <DinoGame hideInstructions />
     </div>
   );
 };

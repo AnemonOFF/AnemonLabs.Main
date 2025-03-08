@@ -68,7 +68,7 @@ export default async function Home(
           </div>
         </main>
       </FadeEffect>
-      <DinoModal />
+      <DinoModal dictionary={pageDictionary["dino"]} />
     </div>
   );
 }

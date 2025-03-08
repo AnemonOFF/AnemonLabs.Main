@@ -11,12 +11,19 @@ import {
 } from "motion/react";
 import styles from "./dinoModal.module.css";
 import Dino from "./dino";
-import { cn } from "@heroui/react";
+import { Button, cn } from "@heroui/react";
 import DinoNotification from "./dinoNotification";
+import { getDictionary } from "@/i18n/get-dictionary";
+import Image from "next/image";
+import { IconX } from "@tabler/icons-react";
 
-export interface DinoModalProps {}
+export interface DinoModalProps {
+  dictionary: Awaited<
+    ReturnType<typeof getDictionary>
+  >["page"]["index"]["dino"];
+}
 
-const DinoModal: React.FC<DinoModalProps> = ({}) => {
+const DinoModal: React.FC<DinoModalProps> = ({ dictionary }) => {
   const [dragScope, dragAnimate] = useAnimate<HTMLDivElement>();
   const [modalScope, modalAnimate] = useAnimate<HTMLDivElement>();
   const [dragged, setDragged] = useState(false);
@@ -147,6 +154,20 @@ const DinoModal: React.FC<DinoModalProps> = ({}) => {
           className="p-5 max-lg:p-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-neutral-200 max-w-[750px] w-full rounded-xl"
           id="dinoModal"
         >
+          <div className="flex justify-between gap-2 items-center">
+            <p className="flex items-center gap-2">
+              <Image
+                src={"/icons/dinosaur.png"}
+                alt="Динозаврик"
+                width={48}
+                height={48}
+              />
+              {dictionary.instruction}
+            </p>
+            <Button variant="light" isIconOnly size="sm" onPress={handleClose}>
+              <IconX className="text-foreground-800" />
+            </Button>
+          </div>
           <Dino firstMount={open} />
         </motion.div>
       </motion.div>

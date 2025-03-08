@@ -14,7 +14,10 @@
       "name": "Dmitry Dudarev",
       "description": "Hi, I'm a Front-End developer, passionate about creating different kinds of applications for more than 5 years.",
       "stack": "Right now, my favourite stack consists of",
-      "cv": "Get CV"
+      "cv": "Get CV",
+      "dino": {
+        "instruction": "Press space or tap on screen to start jumping"
+      }
     },
     "project": {
       "stack": "Technology Stack"
