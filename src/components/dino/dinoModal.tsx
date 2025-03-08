@@ -12,12 +12,14 @@ import {
 import styles from "./dinoModal.module.css";
 import Dino from "./dino";
 import { cn } from "@heroui/react";
+import DinoNotification from "./dinoNotification";
 
 export interface DinoModalProps {}
 
 const DinoModal: React.FC<DinoModalProps> = ({}) => {
   const [dragScope, dragAnimate] = useAnimate<HTMLDivElement>();
   const [modalScope, modalAnimate] = useAnimate<HTMLDivElement>();
+  const [dragged, setDragged] = useState(false);
   const [open, setOpen] = useState(false);
   const dragControls = useDragControls();
   const y = useMotionValue(0);
@@ -114,6 +116,7 @@ const DinoModal: React.FC<DinoModalProps> = ({}) => {
               dragControls.start(e);
             }}
             onPointerMove={(e) => {
+              setDragged(true);
               const { top } = e.currentTarget.getBoundingClientRect();
               const overflow = e.clientY - top;
               if (overflow < -300) {
@@ -127,6 +130,7 @@ const DinoModal: React.FC<DinoModalProps> = ({}) => {
             id="dinoButton"
           />
         </motion.div>
+        <DinoNotification forceClose={dragged} />
       </motion.div>
       <motion.div
         className={cn("fixed inset-0 z-50 bg-background/10 m-2", {
